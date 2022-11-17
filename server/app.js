@@ -5,7 +5,6 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import { createLogger } from 'log-fns';
 
-
 import indexRouter from './routes/index_router.js';
 import usersRouter from './routes/users_router.js';
 
