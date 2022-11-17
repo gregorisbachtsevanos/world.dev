@@ -6,12 +6,11 @@ import logger from 'morgan';
 import { createLogger } from 'log-fns';
 
 
-import indexRouter from './routes/index.js';
-import usersRouter from './routes/users.js';
+import indexRouter from './routes/index_router.js';
+import usersRouter from './routes/users_router.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const log = createLogger();
 const app = express();
 
 app.use(logger('dev'));
