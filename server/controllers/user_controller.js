@@ -8,9 +8,6 @@ import User from "../models/user_model.js";
 const { detect } = detectBrowser;
 
 // Create new User
-export const register = (req, res) => {
-    return console.log(detect(req.headers["user-agent"]).name);
-};
 export const registerLogic = async (req, res) => {
     try {
         const {
@@ -50,7 +47,7 @@ export const registerLogic = async (req, res) => {
             user.extra_info.device.vendor = vendor;
             user.extra_info.device.family = family;
         });
-        
+
         const newUser = await User.register(user, password);
         console.log({ newUser });
         await newUser.save();
@@ -59,6 +56,7 @@ export const registerLogic = async (req, res) => {
     }
 };
 
-// Create new User
-export const login = () => {};
-export const loginLogic = () => {};
+// Login a User
+export const loginLogic = () => {
+    console.log('logged in')
+};
