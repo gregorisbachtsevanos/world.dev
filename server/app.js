@@ -33,6 +33,12 @@ passport.use(new localStrategy(User.authenticate()))
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
+app.use((req, res, next) => {
+    // res.locals.appUrl = process.env.APP_URL
+    res.locals.currentUser = req.user
+    next()
+})
+
 // app.use('/', indexRouter);
 app.use('/', usersRouter);
 
