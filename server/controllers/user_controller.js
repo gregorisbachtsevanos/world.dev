@@ -57,6 +57,6 @@ export const registerLogic = async (req, res) => {
 };
 
 // Login a User
-export const loginLogic = () => {
-    console.log('logged in')
+export const loginLogic = (req, res) => {
+    console.log(req.body)
 };

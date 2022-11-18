@@ -6,11 +6,5 @@
     "setup": "(cd server && npm install) && (cd client && npm install)",
     "server": "cd server && npm run server",
     "client": "cd client && npm run start"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "joi": "^17.7.0"
   }
 }

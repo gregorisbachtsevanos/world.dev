@@ -1,5 +1,6 @@
 import express from 'express';
 import { fileURLToPath } from 'url';
+import createError from "http-errors"
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
@@ -7,6 +8,8 @@ import { createLogger } from 'log-fns';
 import passport from 'passport';
 import localStrategy from 'passport-local';
 import session from 'express-session'
+import cors from 'cors'
+import bodyParser  from 'body-parser';
 
 import User from './models/user_model.js'
 import sessionConfig from "./config/session_config.js"
@@ -19,11 +22,19 @@ const app = express();
 
 import './config/db_config.js'
 
+// const corsOption = {
+//     origin: ['http://localhost:3000'],
+// };
+// app.use(cors(corsOption)); // spacific domain
+app.use(cors()) // for every domain then
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // passport config
 app.use(session(sessionConfig))
@@ -43,7 +54,8 @@ app.use((req, res, next) => {
 app.use('/', usersRouter);
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function (err, req, res, next) {
+    console.error(err)
     next(createError(404));
 });
 
