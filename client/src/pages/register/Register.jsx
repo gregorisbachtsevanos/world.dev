@@ -5,7 +5,7 @@ const Register = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [firstname, setFirstname] = useState("");
-    const [lastname, setLastnames] = useState("");
+    const [lastname, setLastname] = useState("");
     const [email, setEmail] = useState("");
     const navigate = useNavigate();
 
