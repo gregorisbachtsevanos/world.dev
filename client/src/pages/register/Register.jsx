@@ -6,6 +6,7 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastnames] = useState("");
+    const [email, setEmail] = useState("");
     const navigate = useNavigate();
 
     const hanldeSubmit = (e) => {
@@ -47,6 +48,18 @@ const Register = () => {
                         onChange={(e) => setUsername(e.target.value)}
                         required
                         name="username"
+                    />
+                </label>
+            </div>
+            <div className="mb-3">
+                <label className="form-label">
+                    <span>Email</span>
+                    <input
+                        type="text-control"
+                        className="form-control"
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                        name="email"
                     />
                 </label>
             </div>
