@@ -4,12 +4,12 @@ import createError from "http-errors"
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import { createLogger } from 'log-fns';
 import passport from 'passport';
 import localStrategy from 'passport-local';
 import session from 'express-session'
 import cors from 'cors'
 import bodyParser  from 'body-parser';
+import log4js from 'log4js';
 
 import User from './models/user_model.js'
 import sessionConfig from "./config/session_config.js"
@@ -18,7 +18,10 @@ import usersRouter from './routes/users_router.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const log = log4js.getLogger();
 const app = express();
+
+log.level = 'all';
 
 import './config/db_config.js'
 
@@ -68,7 +71,7 @@ app.use(function (err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get("env") === "development" ? err : {};
-    console.error(err);
+    // log.debug(err.stack);
     // render the error page
     res.status(err.status || 500);
 });

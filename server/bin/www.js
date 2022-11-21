@@ -7,9 +7,7 @@
 import app from '../app.js';
 import debugLib from 'debug'
 import { createServer } from 'http';
-import { createLogger } from 'log-fns';
 
-const log = createLogger();
 const debug = debugLib('server:server');
 
 /**
