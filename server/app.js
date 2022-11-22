@@ -1,6 +1,6 @@
 
 import * as dotenv from 'dotenv'
-process.env.NODE_ENV !== "production" ? dotenv.config({ path: '../.env' }) : void 0;
+process.env.NODE_ENV !== "production" ? dotenv.config({ path: './.env' }) : void 0;
 
 import express from 'express';
 import { fileURLToPath } from 'url';
@@ -75,7 +75,7 @@ app.use(function (err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get("env") === "development" ? err : {};
-    // log.debug(err.stack);
+    log.debug(err.stack);
     // render the error page
     res.status(err.status || 500);
 });

@@ -7,8 +7,12 @@
 import app from '../app.js';
 import debugLib from 'debug'
 import { createServer } from 'http';
+import log4js from 'log4js';
 
 const debug = debugLib('server:server');
+
+const log = log4js.getLogger();
+log.level = 'all';
 
 /**
  * Get port from environment and store in Express.

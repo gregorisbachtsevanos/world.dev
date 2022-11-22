@@ -1,6 +1,6 @@
 
 import * as dotenv from 'dotenv'
-process.env.NODE_ENV !== "production" ? dotenv.config({ path: '../.env' }) : void 0;
+process.env.NODE_ENV !== "production" ? dotenv.config({ path: './.env' }) : void 0;
 
 const sessionConfig = {
     secret: process.env.SECRET,
