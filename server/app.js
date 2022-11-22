@@ -1,3 +1,7 @@
+
+import * as dotenv from 'dotenv'
+process.env.NODE_ENV !== "production" ? dotenv.config({ path: '../.env' }) : void 0;
+
 import express from 'express';
 import { fileURLToPath } from 'url';
 import createError from "http-errors"
@@ -8,7 +12,7 @@ import passport from 'passport';
 import localStrategy from 'passport-local';
 import session from 'express-session'
 import cors from 'cors'
-import bodyParser  from 'body-parser';
+import bodyParser from 'body-parser';
 import log4js from 'log4js';
 
 import User from './models/user_model.js'

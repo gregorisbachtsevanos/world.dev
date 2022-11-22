@@ -1,7 +1,7 @@
 import * as dotenv from "dotenv";
 import mongoose from "mongoose";
 
-process.env.NODE_ENV != "production" ? dotenv.config() : void 0;
+process.env.NODE_ENV !== "production" ? dotenv.config({ path: '../.env' }) : void 0;
 mongoose.connect(process.env.DB_ACCESS, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
