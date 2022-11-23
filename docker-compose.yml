@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+  #* Service name
+  server:
+    #* Creating a custom image
+    build:
+      #* Location to the Dockerfile
+      context: ./server
+      #* Name of the Dockerfile
+      dockerfile: ./Dockerfile
+    ports:
+      #* External port: Internal port
+      - "3001:3001"
+    volumes:
+      #* ADD THE CONFIGURATION FROM THIS POINT to create a volume named serverVolume
+      - serverVolume:/server
+      #* ADD THE CONFIGURATION FROM THIS POINT to sync the working directory
+      - .:/server: ro #* read-only option
+      - /server/node_modules
+#* Making the node service volume accessible to other services.
+volumes:
+  #* Declaring the node service volume.
+  serverVolume:
+
+  # frontend:
+  #   build: ./frontend/vessel-owner-vessels
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - ./frontend/vessel-owner-vessels/src:/app/src
+  #   stdin_open: true
+  #   tty: true
+  #   depends_on:
+  #     - backend
