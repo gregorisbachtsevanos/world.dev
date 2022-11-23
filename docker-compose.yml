@@ -11,6 +11,7 @@ services:
       context: ./server
       #* Name of the Dockerfile
       dockerfile: ./Dockerfile
+      
     ports:
 
       #* External port: Internal port
