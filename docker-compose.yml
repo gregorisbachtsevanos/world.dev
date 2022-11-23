@@ -1,44 +1,24 @@
 version: "3.9"
 services:
-
   #* Service name
   server:
-
     #* Creating a custom image
     build:
-
       #* Location to the Dockerfile
       context: ./server
       #* Name of the Dockerfile
       dockerfile: ./Dockerfile
-      
     ports:
-
       #* External port: Internal port
       - "3001:3001"
-
     volumes:
       #* ADD THE CONFIGURATION FROM THIS POINT to create a volume named serverVolume
       - serverVolume:/server
       #* ADD THE CONFIGURATION FROM THIS POINT to sync the working directory
-      - .:/server: ro #* read-only option
+      - .:/server:ro #* read-only option
       - /server/node_modules
-
-      #* ADD THE CONFIGURATION FROM THIS POINT to build the MongoDB service
-    enviroment:
-      - PORT=3001
-      #* Username for the mongo database
-      - MONGO_INITDB_ROOT_USERNAME=Gregoris
-      #* Password for the mongo database
-      - MONGO_INITDB_ROOT_PASSWORD=yPSXImmQr0SbLVpM
-
-    #* Enables the mongo service to start before the node service
-  depends_on:
-    - mongo
-
 #* Making the node service volume accessible to other services.
 volumes:
-
   #* Declaring the node service volume.
   serverVolume:
 
