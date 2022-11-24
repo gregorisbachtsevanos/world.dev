@@ -61,5 +61,34 @@ export const loginLogic = async (req, res) => {
     console.log(req.body)
     const user = await User.findOne(req.username)
     // return console.log(user)
-    res.send({user})
+    res.send({ user })
+};
+
+// Tags page data
+export const tags = async (req, res) => {
+    res.send({ page: 'Tags' })
+};
+
+// About page data
+export const about = async (req, res) => {
+    res.send({ page: 'About' })
+};
+
+// Contact page data
+export const contact = async (req, res) => {
+    res.send({ page: 'Contact' })
+};
+
+// Get user's profile data
+export const getUserProfile = async (req, res) => {
+    res.send({ page: "Profile" })
+};
+
+// Get user's settings data
+export const getUserSettings = async (req, res) => {
+    res.send({ page: "Settings" })
+};
+// write article
+export const writeArticle = async (req, res) => {
+    res.send({ page: "Write an Article" })
 };

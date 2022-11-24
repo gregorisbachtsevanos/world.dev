@@ -17,6 +17,8 @@ const validateUser = (req, res, next) => {
     }
 };
 
+router.get("/", asyncCatch());
+
 //Post user (register)
 router.post("/register", validateUser, asyncCatch(registerLogic));
 
@@ -26,6 +28,22 @@ router.post(
     passport.authenticate("local", { failureRedirect: "/" }),
     (loginLogic)
 );
+
+router.get("/tags", asyncCatch());
+
+router.get("/about", asyncCatch());
+
+router.get("/contact", asyncCatch());
+
+router.get("/register", asyncCatch());
+
+router.get("/:username", asyncCatch());
+
+router.route("/:username/settings")
+    .get(asyncCatch())
+    .post(asyncCatch());
+
+router.post("/:username/write", asyncCatch());
 
 //Get user by Id
 
