@@ -39,14 +39,3 @@ services:
 volumes:
   #* Declaring the node service volume.
   serverVolume:
-
-  # frontend:
-  #   build: ./frontend/vessel-owner-vessels
-  #   ports:
-  #     - "3000:3000"
-  #   volumes:
-  #     - ./frontend/vessel-owner-vessels/src:/app/src
-  #   stdin_open: true
-  #   tty: true
-  #   depends_on:
-  #     - backend
