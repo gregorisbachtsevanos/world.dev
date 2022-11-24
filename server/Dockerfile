@@ -1,17 +1,16 @@
-# Sets the base image of the application to the node’s official image.
+#* Sets the base image of the application to the node’s official image.
 FROM node:19
 
-# Sets the Working Directory as "/server"
+#* Sets the Working Directory as "/server"
 WORKDIR /server
-# Copies the package.json file into "/server" and runs npm i
+#* Copies the package.json file into "/server" and runs npm i
 COPY package.json /server
 RUN npm i
-# Copies the entire source code into "/server"
+#* Copies the entire source code into "/server"
 COPY . /server
 
-# Specifies the port the node app will be running on
+#* Specifies the port the node app will be running on
 EXPOSE 3001
 
-# Runs "node --watch ./bin/www.js" after the above step is completed
+#* Runs "node --watch ./bin/www.js" after the above step is completed
 CMD ["npm", "run", "server"]
-# CMD ["node", "--watch", "./bin/www.js"]
