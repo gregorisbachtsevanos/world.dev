@@ -59,7 +59,7 @@ export const registerLogic = async (req, res) => {
 // Login a User
 export const loginLogic = async (req, res) => {
     console.log(req.body)
-    const user = await User.findOne(req.username)
+    // const user = await User.findOne(req.username)
     // return console.log(user)
     res.send({ user })
 };

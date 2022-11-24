@@ -3,8 +3,10 @@ import passport from "passport";
 
 import asyncCatch from "../utils/asyncCatch.js";
 import ThrowError from "../utils/ThrowError.js";
-import { registerLogic, loginLogic } from "../controllers/user_controller.js";
 import schemaValidation from "../middleware/schemaValidation.js";
+
+import { registerLogic, loginLogic, tags, about, contact } from "../controllers/user_controller.js";
+
 var router = Router();
 
 const validateUser = (req, res, next) => {
@@ -17,7 +19,7 @@ const validateUser = (req, res, next) => {
     }
 };
 
-router.get("/", asyncCatch());
+// router.get("/", asyncCatch());
 
 //Post user (register)
 router.post("/register", validateUser, asyncCatch(registerLogic));
@@ -29,13 +31,13 @@ router.post(
     (loginLogic)
 );
 
-router.get("/tags", asyncCatch());
+router.get("/tags", tags);
 
-router.get("/about", asyncCatch());
+router.get("/about", (req, res) => {
+    res.send({ page: 'asyncCatch' })
+});
 
-router.get("/contact", asyncCatch());
-
-router.get("/register", asyncCatch());
+router.get("/contact", contact);
 
 router.get("/:username", asyncCatch());
 
@@ -44,11 +46,5 @@ router.route("/:username/settings")
     .post(asyncCatch());
 
 router.post("/:username/write", asyncCatch());
-
-//Get user by Id
-
-//Put user
-
-//Delete user
 
 export default router;
