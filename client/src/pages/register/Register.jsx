@@ -30,6 +30,7 @@ const Register = () => {
         if (res.status !== 200) {
             return console.log(res);
         }
+        navigate("/");
     };
 
     return (

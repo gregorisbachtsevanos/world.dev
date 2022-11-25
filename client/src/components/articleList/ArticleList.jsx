@@ -1,5 +1,4 @@
-import Card from "react-bootstrap/Card";
-import { Nav, Button } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 
 import Article from "../../components/article/Article";
 
