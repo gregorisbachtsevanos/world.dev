@@ -9,6 +9,8 @@ const { detect } = detectBrowser;
 
 // Create new User
 export const registerLogic = async (req, res) => {
+    console.log(req.body)
+    return;
     try {
         const {
             firstname,

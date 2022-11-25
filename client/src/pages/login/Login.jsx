@@ -17,7 +17,7 @@ const Login = () => {
         });
 
         if (res.status !== 200) {
-            return console.log(res.status);
+            return console.log(res);
         }
 
         navigate("/");

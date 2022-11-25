@@ -6,7 +6,7 @@ const userSchema = Joi.object({
     username: Joi.string().required(),
     email: Joi.string().required(),
     password: Joi.string().min(8).max(20).required(),
-    repeat_password: Joi.string().min(8).max(20).required()
+    repeatPassword: Joi.string().min(8).max(20).required()
 })
 
 export default { userSchema }

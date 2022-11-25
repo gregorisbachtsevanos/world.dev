@@ -12,8 +12,24 @@ const Register = () => {
     const [email, setEmail] = useState("");
     const navigate = useNavigate();
 
-    const hanldeSubmit = (e) => {
+    const hanldeSubmit = async (e) => {
         e.preventDefault();
+        const res = await fetch("http://localhost:3001/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                username,
+                password,
+                firstname,
+                lastname,
+                email,
+                repeatPassword,
+            }),
+        });
+
+        if (res.status !== 200) {
+            return console.log(res);
+        }
     };
 
     return (

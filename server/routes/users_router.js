@@ -27,7 +27,7 @@ router.post("/register", validateUser, asyncCatch(registerLogic));
 //Get user (login)
 router.post(
     "/login",
-    passport.authenticate("local", { failureRedirect: "/" }),
+    passport.authenticate("local"),
     (loginLogic)
 );
 
