@@ -61,23 +61,28 @@ export const registerLogic = async (req, res) => {
 // Login a User
 export const loginLogic = async (req, res) => {
     console.log(req.body)
-    // const user = await User.findOne(req.username)
+    const user = await User.findOne(req.username)
     // return console.log(user)
     res.send({ user })
 };
 
+// Index page data
+export const indexPage = async (req, res) => {
+    res.send({ page: 'Tags' })
+};
+
 // Tags page data
-export const tags = async (req, res) => {
+export const tagsPage = async (req, res) => {
     res.send({ page: 'Tags' })
 };
 
 // About page data
-export const about = async (req, res) => {
+export const aboutPage = async (req, res) => {
     res.send({ page: 'About' })
 };
 
 // Contact page data
-export const contact = async (req, res) => {
+export const contactPage = async (req, res) => {
     res.send({ page: 'Contact' })
 };
 
@@ -91,6 +96,6 @@ export const getUserSettings = async (req, res) => {
     res.send({ page: "Settings" })
 };
 // write article
-export const writeArticle = async (req, res) => {
+export const newArticle = async (req, res) => {
     res.send({ page: "Write an Article" })
 };

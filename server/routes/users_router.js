@@ -5,7 +5,7 @@ import asyncCatch from "../utils/asyncCatch.js";
 import ThrowError from "../utils/ThrowError.js";
 import schemaValidation from "../middleware/schemaValidation.js";
 
-import { registerLogic, loginLogic, tags, about, contact } from "../controllers/user_controller.js";
+import { registerLogic, loginLogic, indexPage, tagsPage, aboutPage, contactPage, getUserProfile, getUserSettings, newArticle } from "../controllers/user_controller.js";
 
 var router = Router();
 
@@ -19,7 +19,6 @@ const validateUser = (req, res, next) => {
     }
 };
 
-// router.get("/", asyncCatch());
 
 //Post user (register)
 router.post("/register", validateUser, asyncCatch(registerLogic));
@@ -31,20 +30,20 @@ router.post(
     (loginLogic)
 );
 
-router.get("/tags", tags);
+router.get("/tags", indexPage);
 
-router.get("/about", (req, res) => {
-    res.send({ page: 'asyncCatch' })
-});
+router.get("/tags", tagsPage);
 
-router.get("/contact", contact);
+router.get("/about", aboutPage);
 
-router.get("/:username", asyncCatch());
+router.get("/contact", contactPage);
+
+router.get("/:username", asyncCatch(getUserProfile));
 
 router.route("/:username/settings")
-    .get(asyncCatch())
+    .get(asyncCatch(getUserSettings))
     .post(asyncCatch());
 
-router.post("/:username/write", asyncCatch());
+router.post("/:username/new-article", (newArticle));
 
 export default router;
