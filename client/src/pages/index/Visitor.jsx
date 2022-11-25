@@ -1,9 +1,11 @@
-import React from 'react'
+import ArticleList from "../../components/articleList/ArticleList";
 
 const Visitor = () => {
-  return (
-    <div>Visitor</div>
-  )
-}
+    return (
+        <div>
+            <ArticleList />
+        </div>
+    );
+};
 
-export default Visitor
+export default Visitor;

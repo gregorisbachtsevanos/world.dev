@@ -7,11 +7,11 @@ const Index = () => {
     const user = false;
     return (
         <div className="row">
-            <div className="col-2">
+            <div className="col-3">
                 <Sidebar />
             </div>
             <div className="col-6">{user ? <User /> : <Visitor />}</div>
-            <div className="col-4">
+            <div className="col-3">
                 <Trending />
             </div>
         </div>

@@ -1,14 +1,14 @@
-import { Nav, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Nav, Button } from "react-bootstrap";
 
 const Navbar = () => {
     return (
         <Nav className="row p-2">
             <Nav.Item className="col-2">
-                <Link>logo</Link>
+                <Link to="/">logo</Link>
             </Nav.Item>
-            <div className="col-10 d-flex justify-content-end">
-                <Nav.Item className="p-2 m-a">
+            <div className="col-10 d-flex justify-content-end align-items-center">
+                <Nav.Item className="">
                     <Link to="/login">Login</Link>
                 </Nav.Item>
                 <Button variant="outline-primary">
