@@ -1,11 +1,21 @@
-import User from './User'
-import Visitor from './Visitor'
+import Sidebar from "../../components/sidebar/Sidebar";
+import Trending from "../../components/trending/Trending";
+import User from "./User";
+import Visitor from "./Visitor";
 
 const Index = () => {
-    const user = false
-  return (
-    <div>{user ? <User/> : <Visitor/> }</div>
-  )
-}
+    const user = false;
+    return (
+        <div className="row">
+            <div className="col-2">
+                <Sidebar />
+            </div>
+            <div className="col-6">{user ? <User /> : <Visitor />}</div>
+            <div className="col-4">
+                <Trending />
+            </div>
+        </div>
+    );
+};
 
-export default Index
+export default Index;
