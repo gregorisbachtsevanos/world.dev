@@ -1,21 +1,21 @@
 import { Link } from "react-router-dom";
 
 const categories = [
-    { icon: "", name: "Home" },
-    { icon: "", name: "Listing" },
-    { icon: "", name: "FAQ" },
-    { icon: "", name: "Sponsors" },
-    { icon: "", name: "About" },
-    { icon: "", name: "Contact" },
-    { icon: "", name: "Guides" },
-    { icon: "", name: "Privacy Policy" },
+    { icon: "", name: "Home", value: "/" },
+    { icon: "", name: "Listing", value: "listing" },
+    { icon: "", name: "FAQ", value: "fqa" },
+    { icon: "", name: "Sponsors", value: "sponsors" },
+    { icon: "", name: "About", value: "about" },
+    { icon: "", name: "Contact", value: "contact" },
+    { icon: "", name: "Guides", value: "guides" },
+    { icon: "", name: "Privacy Policy", value: "privacy" },
 ];
 
 const Categories = () => {
     return (
         <>
             {categories.map((category) => (
-                <Link key={category.name} to={category.name}>
+                <Link key={category.name} to={category.value}>
                     {category.name}
                 </Link>
             ))}
