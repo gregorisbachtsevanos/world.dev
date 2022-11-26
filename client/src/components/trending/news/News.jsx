@@ -13,12 +13,16 @@ const News = () => {
                         MongoDB 2022 Hackathon submission - Introducing Indian
                         dishes catalog MongoDB Atlas Hackathon 2022 on DEV
                     </Card.Text>
-                    <Button variant="link">
-                        <Link to={"#"}>Share</Link>
-                    </Button>
-                    <Button variant="link">
-                        <Link to={"#"}>See</Link>
-                    </Button>
+                    <div>
+                        <Button className="w-100" variant="primary">
+                            <Link to={"#"}>Share</Link>
+                        </Button>
+                    </div>
+                    <div>
+                        <Button className="w-100" variant="light">
+                            <Link to={"#"}>See</Link>
+                        </Button>
+                    </div>
                 </Card.Body>
             </Card>
         </>
