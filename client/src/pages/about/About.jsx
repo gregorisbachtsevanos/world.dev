@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Card, Button, Container } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 
 const About = () => {
     return (
