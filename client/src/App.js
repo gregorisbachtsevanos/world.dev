@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './components/navbar/Navbar';
 import About from './pages/about/About';
 import Contact from './pages/contact/Contact';
+import FAQ from './pages/faq/FAQ';
 import Guides from './pages/guides/Guides';
 import Index from './pages/index/Index';
 import Login from './pages/login/Login';
@@ -21,6 +22,7 @@ function App() {
             <Route index element={<Index />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/sponsorship" element={<Sponsorship />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
