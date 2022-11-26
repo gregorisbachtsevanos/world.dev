@@ -1,10 +1,10 @@
 import { Card, Container } from "react-bootstrap";
 
-const Privacy = () => {
+const Guides = () => {
     return (
         <Container>
             <Card className="my-2 text-start">
-                <h4>Privacy</h4>
+                <h4>Guides</h4>
                 <Card.Title className="w-75 m-auto"></Card.Title>
                 <Card.Body className="w-75 m-auto">
                     <Card.Text>
@@ -23,4 +23,4 @@ const Privacy = () => {
     );
 };
 
-export default Privacy;
+export default Guides;
