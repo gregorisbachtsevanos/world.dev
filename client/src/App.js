@@ -7,6 +7,7 @@ import Index from './pages/index/Index';
 import Login from './pages/login/Login';
 import Privacy from './pages/privacy/Privacy';
 import Register from './pages/register/Register';
+import Sponsorship from './pages/sponsorship/Sponsorship';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/sponsorship" element={<Sponsorship />} />
           </Routes>
         </div>
       </BrowserRouter>
