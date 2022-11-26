@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './App.css';
 import Navbar from './components/navbar/Navbar';
+import About from './pages/about/About';
 import Index from './pages/index/Index';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
@@ -16,6 +17,7 @@ function App() {
             <Route index element={<Index />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </div>
       </BrowserRouter>
