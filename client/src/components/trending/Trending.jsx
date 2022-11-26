@@ -1,11 +1,12 @@
 import Nav from "react-bootstrap/Nav";
+import Listing from "./listing/Listing";
+import News from "./news/News";
 
 const Trending = () => {
     return (
         <Nav className="flex-column">
-            <Nav.Link>trending</Nav.Link>
-            <Nav.Link>trending</Nav.Link>
-            <Nav.Link>trending</Nav.Link>
+            <News />
+            <Listing />
         </Nav>
     );
 };
