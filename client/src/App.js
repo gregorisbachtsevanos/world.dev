@@ -14,9 +14,11 @@ import Sponsorship from './pages/sponsorship/Sponsorship';
 import { PublicRouter } from './utils/PublicRouter';
 import { PrivateRouter } from './utils/PrivateRouter';
 import CreateArticle from './pages/createArticle/CreateArticle';
+import Profile from './pages/profile/Profile';
+import Settings from './pages/settings/Settings';
 
 function App() {
-  const user = true;
+  const user = false;
 
   return (
     <div className="App">
@@ -32,6 +34,8 @@ function App() {
             {/* Private Routers */}
             <Route element={<PrivateRouter user={user} />}>
               <Route path='/new-article' element={<CreateArticle />} />
+              <Route path='/settings' element={<Settings />} />
+              <Route path='/:username' element={<Profile />} />
             </Route>
             {/* General Routers */}
             <Route index element={<Index user={user} />} />
