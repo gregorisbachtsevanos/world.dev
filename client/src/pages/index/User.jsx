@@ -1,9 +1,11 @@
-import React from 'react'
+import ArticleList from "../../components/articleList/ArticleList";
 
 const User = () => {
-  return (
-    <div>User</div>
-  )
-}
+    return (
+        <div>
+            <ArticleList />
+        </div>
+    );
+};
 
-export default User
+export default User;
