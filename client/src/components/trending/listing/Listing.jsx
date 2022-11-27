@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, CardGroup } from "react-bootstrap";
 
 const listings = [
     {
@@ -29,8 +29,8 @@ const Listing = () => {
         <>
             <Card className="my-2 text-start">
                 <h4>Listings</h4>
-                {listings.map((el) => (
-                    <div>
+                {listings.map((el, index) => (
+                    <CardGroup key={index}>
                         <Card.Title className="w-75 m-auto">
                             <Link to={`listing/${el.hastag}/${el.title}`}>
                                 {el.title}
@@ -39,7 +39,7 @@ const Listing = () => {
                         <Card.Body className="w-75 m-auto">
                             <Card.Text>{el.hastag}</Card.Text>
                         </Card.Body>
-                    </div>
+                    </CardGroup>
                 ))}
             </Card>
         </>

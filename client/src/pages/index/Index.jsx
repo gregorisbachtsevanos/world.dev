@@ -3,8 +3,7 @@ import Trending from "../../components/trending/Trending";
 import User from "./User";
 import Visitor from "./Visitor";
 
-const Index = () => {
-    const user = false;
+const Index = ({ user }) => {
     return (
         <div className="row">
             <div className="col-3">
