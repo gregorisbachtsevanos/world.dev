@@ -44,6 +44,7 @@ router.route("/:username/settings")
     .get(asyncCatch(getUserSettings))
     .post(asyncCatch());
 
-router.post("/:username/new-article", (newArticle));
+// router.post("/:username/new-article", (newArticle));
+router.post("/new-article", (newArticle));
 
 export default router;

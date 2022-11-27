@@ -1,19 +1,32 @@
 import { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, FloatingLabel, Container } from "react-bootstrap";
 
 const CreateArticle = () => {
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
+    const [error, setError] = useState(null);
 
-    const hanldeSubmit = (e) => {
+    const hanldeSubmit = async (e) => {
+        setError(null);
         e.preventDefault();
+        const res = await fetch("http://localhost:3001/new-article", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ title, body }),
+        });
+
+        if (res.status !== 200) {
+            setError("Something went wrong");
+        }
+        const data = await res.json();
+        console.log(data);
     };
 
     return (
-        <Form onSubmit={hanldeSubmit}>
+        <Form onSubmit={hanldeSubmit} className="w-50">
             <h4>Article</h4>
             <Form.Group className="mb-3">
-                <Form.Label className="form-label">
+                <Container className="form-label">
                     <span>Title</span>
                     <Form.Control
                         type="text-control"
@@ -22,21 +35,25 @@ const CreateArticle = () => {
                         required
                         name="title"
                     />
-                </Form.Label>
+                </Container>
             </Form.Group>
             <Form.Group className="mb-3">
-                <Form.Label className="form-label">
+                <Container className="form-label">
                     <span>Body</span>
-                    <Form.Control
-                        type="text"
-                        className="form-control"
-                        onChange={(e) => setBody(e.target.value)}
-                        required
-                        name="body"
-                    />
-                </Form.Label>
+                    <FloatingLabel>
+                        <Form.Control
+                            type="text"
+                            className="form-control"
+                            onChange={(e) => setBody(e.target.value)}
+                            required
+                            name="body"
+                            style={{ height: "100px" }}
+                        />
+                    </FloatingLabel>
+                </Container>
             </Form.Group>
             <Button type="submit">Submit</Button>
+            {error && <p>{error}</p>}
         </Form>
     );
 };

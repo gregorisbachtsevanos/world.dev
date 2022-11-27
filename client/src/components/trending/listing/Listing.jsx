@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Card, Button, CardGroup } from "react-bootstrap";
+import { Card, CardGroup } from "react-bootstrap";
 
 const listings = [
     {

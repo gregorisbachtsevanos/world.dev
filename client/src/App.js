@@ -24,16 +24,16 @@ function App() {
         <div>
           <Navbar />
           <Routes>
-
+            {/* Public Routers */}
             <Route element={<PublicRouter user={user} />} >
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
             </Route>
-
+            {/* Private Routers */}
             <Route element={<PrivateRouter user={user} />}>
               <Route path='/new-article' element={<CreateArticle />} />
             </Route>
-
+            {/* General Routers */}
             <Route index element={<Index user={user} />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/sponsorship" element={<Sponsorship />} />
@@ -41,7 +41,6 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/guides" element={<Guides />} />
             <Route path="/privacy" element={<Privacy />} />
-
           </Routes>
         </div>
       </BrowserRouter>
