@@ -40,14 +40,15 @@ export const registerLogic = async (req, res) => {
             user.extra_info.browser = browser;
         }
 
-        si.cpu().then((data) => {
+        await si.cpu().then((data) => {
             const { family, vendor, brand, manufacturer } = data;
+            console.log(data);
             user.extra_info.device.manufacturer = manufacturer;
             user.extra_info.device.brand = brand;
             user.extra_info.device.vendor = vendor;
             user.extra_info.device.family = family;
         });
-
+        // return console.log('user')
         const newUser = await User.register(user, password);
         console.log({ newUser });
         await newUser.save();
