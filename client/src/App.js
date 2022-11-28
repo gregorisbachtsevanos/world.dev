@@ -18,13 +18,13 @@ import Profile from './pages/profile/Profile';
 import Settings from './pages/settings/Settings';
 
 function App() {
-  const user = false;
+  const user = true;
 
   return (
     <div className="App">
       <BrowserRouter>
         <div>
-          <Navbar />
+          <Navbar user={user} />
           <Routes>
             {/* Public Routers */}
             <Route element={<PublicRouter user={user} />} >
