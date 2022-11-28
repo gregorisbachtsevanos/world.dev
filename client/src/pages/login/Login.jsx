@@ -20,7 +20,9 @@ const Login = () => {
             return console.log(res);
         }
 
-        navigate("/");
+        const user = await res.json();
+        console.log(user);
+        // navigate("/");
     };
 
     return (

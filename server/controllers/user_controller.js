@@ -9,8 +9,6 @@ const { detect } = detectBrowser;
 
 // Create new User
 export const registerLogic = async (req, res) => {
-    console.log(req.body)
-    return;
     try {
         const {
             firstname,
@@ -18,11 +16,11 @@ export const registerLogic = async (req, res) => {
             username,
             email,
             password,
-            repeat_password,
+            repeatPassword,
             gender,
         } = req.body;
-
-        if (password != repeat_password) {
+        console.log(password, repeatPassword);
+        if (password != repeatPassword) {
             throw new Error("Passwords not match");
         }
         const user = await new User({
@@ -60,10 +58,8 @@ export const registerLogic = async (req, res) => {
 
 // Login a User
 export const loginLogic = async (req, res) => {
-    console.log(req.body)
     const user = await User.findOne(req.username)
-    // return console.log(user)
-    res.send({ user })
+    res.send(user)
 };
 
 // Index page data

@@ -18,7 +18,7 @@ import Profile from './pages/profile/Profile';
 import Settings from './pages/settings/Settings';
 
 function App() {
-  const user = true;
+  const user = false;
 
   return (
     <div className="App">
