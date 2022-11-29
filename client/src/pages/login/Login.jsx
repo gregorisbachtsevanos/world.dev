@@ -7,7 +7,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    const hanldeSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const res = await fetch("http://localhost:3001/login", {
@@ -26,7 +26,7 @@ const Login = () => {
     };
 
     return (
-        <Form onSubmit={hanldeSubmit}>
+        <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
                 <Form.Label className="form-label">
                     <span>Username</span>
