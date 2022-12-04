@@ -4,6 +4,7 @@ import si from "systeminformation";
 import detectBrowser from "detect-browser";
 
 import User from "../models/user_model.js";
+import Article from "../models/article_model.js";
 
 const { detect } = detectBrowser;
 
@@ -94,7 +95,8 @@ export const getUserSettings = async (req, res) => {
 };
 // write article
 export const newArticle = async (req, res) => {
-    return console.log(req.body)
-
+    // return console.log(req.body)
+    const article = await Article(req.body)
+    await article.save()
     res.send(req.body)
 };

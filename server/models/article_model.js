@@ -1,4 +1,4 @@
-import mongoose, { models } from "mongoose";
+import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
@@ -10,6 +10,7 @@ const articleSchema = new Schema(
         },
         title: {
             type: String,
+            unique: true,
             trim: true,
         },
         body: {
@@ -22,4 +23,4 @@ const articleSchema = new Schema(
     }
 )
 
-export default mongoose.models('Articles', articleSchema)
+export default mongoose.model('Articles', articleSchema)

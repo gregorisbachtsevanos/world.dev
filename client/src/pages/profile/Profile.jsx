@@ -1,9 +1,14 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const Profile = () => {
+const Profile = ({ user }) => {
     const { username } = useParams();
-    return <div>{username}</div>;
+    return (
+        <div>
+            {username}
+            <Link to={`new-article`}>New Article</Link>
+        </div>
+    );
 };
 
 export default Profile;

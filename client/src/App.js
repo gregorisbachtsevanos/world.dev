@@ -35,11 +35,11 @@ function App() {
               <Route path="/register" element={<Register />} />
             </Route>
             {/* Private Routers */}
-            {user && <Route element={<PrivateRouter user={user} />}>
-              <Route path='/new-article' element={<CreateArticle user={user} />} />
+            <Route element={<PrivateRouter user={user} />}>
+              <Route path='/:username/new-article' element={<CreateArticle user={user} />} />
               <Route path='/:username/settings' element={<Settings user={user} />} />
               <Route path='/:username' element={<Profile user={user} />} />
-            </Route>}
+            </Route>
             {/* General Routers */}
             <Route index element={<Index user={user} />} />
             <Route path="/faq" element={<FAQ />} />
