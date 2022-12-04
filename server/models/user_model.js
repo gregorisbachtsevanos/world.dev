@@ -16,6 +16,7 @@ const userSchema = new mongoose.Schema(
 
         // },
         extra_info: {
+            theme: { type: String, trim: true },
             avatar: { type: String, trim: true },
             phone: { type: Number, trim: true, min: 10, max: 10 },
             bio: { type: String, trim: true, maxLength: 120 },

@@ -61,7 +61,7 @@ export const registerLogic = async (req, res) => {
 // Login a User
 export const loginLogic = async (req, res) => {
     const user = await User.findOne(req.username)
-    res.send(user)
+    res.status(200).send(user)
 };
 
 // Index page data

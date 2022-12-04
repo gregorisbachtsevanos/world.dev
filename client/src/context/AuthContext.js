@@ -6,6 +6,8 @@ export const AuthReducer = (state, action) => {
     switch (action.type) {
         case 'LOGIN':
             return { ...state, user: action.payload };
+        case 'THEME':
+            return { ...state, user: action.payload };
         case 'LOGOUT':
             return { user: null };
     }
@@ -14,7 +16,7 @@ export const AuthReducer = (state, action) => {
 
 export const AuthContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AuthReducer, {
-        user: null
+        user: null,
     });
     console.log(state)
 

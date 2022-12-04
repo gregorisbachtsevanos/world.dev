@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.dark-theme{
+  background-color: #232323;
+}
+
+.dark-theme-card{
+  background-color: #232323;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -12,12 +12,23 @@ const Navbar = ({ user }) => {
         navigate("/");
     };
 
+    const changeTheme = async () => {
+        const res = await fetch("http://localhost:3001/change-theme", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(user),
+        });
+    };
+
     return (
         <Nav className="row p-2">
             <Nav.Item className="col-2">
                 <Link to="/">logo</Link>
             </Nav.Item>
             <div className="col-10 d-flex justify-content-end align-items-center">
+                <Button variant="outline-primary" onClick={changeTheme}>
+                    theme
+                </Button>
                 {!user ? (
                     <>
                         <Nav.Item className="">

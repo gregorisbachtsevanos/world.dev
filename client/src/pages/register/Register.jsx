@@ -28,9 +28,9 @@ const Register = () => {
         });
 
         if (res.status !== 200) {
-            return console.log(res);
+            console.log(res);
+            return navigate("/");
         }
-        navigate("/");
     };
 
     return (
