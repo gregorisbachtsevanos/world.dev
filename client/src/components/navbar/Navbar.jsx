@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
 import { Nav, Button } from "react-bootstrap";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Navbar = ({ user }) => {
-    const username = "gregoris";
+    const { dispatch } = useAuthContext();
+
+    const logout = () => {
+        localStorage.removeItem("user");
+        dispatch({ type: "LOGOUT" });
+    };
+
     return (
         <Nav className="row p-2">
             <Nav.Item className="col-2">
@@ -19,9 +26,14 @@ const Navbar = ({ user }) => {
                         </Button>
                     </>
                 ) : (
-                    <Button variant="outline-primary">
-                        <Link to={`/${username}`}>Profile</Link>
-                    </Button>
+                    <>
+                        <Button variant="outline-primary">
+                            <Link to={`/${user.username}`}>Profile</Link>
+                        </Button>
+                        <Button variant="outline-primary" onClick={logout}>
+                            Logout
+                        </Button>
+                    </>
                 )}
             </div>
         </Nav>

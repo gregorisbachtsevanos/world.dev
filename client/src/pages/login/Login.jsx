@@ -25,8 +25,7 @@ const Login = () => {
         const user = await res.json();
         localStorage.setItem("user", JSON.stringify(user));
         dispatch({ type: "LOGIN", payload: user });
-        console.log(user);
-        // navigate("/");
+        navigate("/");
     };
 
     return (
