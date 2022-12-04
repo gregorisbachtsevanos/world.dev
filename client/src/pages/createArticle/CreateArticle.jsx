@@ -6,7 +6,7 @@ const CreateArticle = () => {
     const [body, setBody] = useState("");
     const [error, setError] = useState(null);
 
-    const hanldeSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         setError(null);
         e.preventDefault();
         const res = await fetch("http://localhost:3001/new-article", {
@@ -23,7 +23,7 @@ const CreateArticle = () => {
     };
 
     return (
-        <Form onSubmit={hanldeSubmit} className="w-50">
+        <Form onSubmit={handleSubmit} className="w-50">
             <h4>Article</h4>
             <Form.Group className="mb-3">
                 <Container className="form-label">

@@ -1,13 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Nav, Button } from "react-bootstrap";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Navbar = ({ user }) => {
     const { dispatch } = useAuthContext();
+    const navigate = useNavigate();
 
     const logout = () => {
         localStorage.removeItem("user");
         dispatch({ type: "LOGOUT" });
+        navigate("/");
     };
 
     return (

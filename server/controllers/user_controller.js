@@ -94,6 +94,7 @@ export const getUserSettings = async (req, res) => {
 };
 // write article
 export const newArticle = async (req, res) => {
-    console.log(req.body)
+    return console.log(req.body)
+
     res.send(req.body)
 };
