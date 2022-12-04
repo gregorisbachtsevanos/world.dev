@@ -1,24 +1,25 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-
-//* app
 import './App.css';
 import Navbar from './components/navbar/Navbar';
+
+import { useAuthContext } from './hooks/useAuthContext';
+
+import { PublicRouter } from './utils/PublicRouter';
+import { PrivateRouter } from './utils/PrivateRouter';
+
+import Index from './pages/index/Index';
+import Register from './pages/register/Register';
+import Login from './pages/login/Login';
+import Sponsorship from './pages/sponsorship/Sponsorship';
+import CreateArticle from './pages/createArticle/CreateArticle';
+import Profile from './pages/profile/Profile';
+import Settings from './pages/settings/Settings';
 import About from './pages/about/About';
 import Contact from './pages/contact/Contact';
 import FAQ from './pages/faq/FAQ';
 import Guides from './pages/guides/Guides';
-import Index from './pages/index/Index';
-import Login from './pages/login/Login';
 import Privacy from './pages/privacy/Privacy';
-import Register from './pages/register/Register';
-import Sponsorship from './pages/sponsorship/Sponsorship';
-import { PublicRouter } from './utils/PublicRouter';
-import { PrivateRouter } from './utils/PrivateRouter';
-import CreateArticle from './pages/createArticle/CreateArticle';
-import Profile from './pages/profile/Profile';
-import Settings from './pages/settings/Settings';
-import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
   const { user } = useAuthContext()
