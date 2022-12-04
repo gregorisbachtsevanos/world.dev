@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import { Button, Nav } from "react-bootstrap";
 
-const ClickToAction = () => {
+const ClickToAction = ({ user }) => {
     return (
         <Card className="p-3">
             <Card.Body className="text-start">

@@ -7,7 +7,7 @@ const Index = ({ user }) => {
     return (
         <div className="row">
             <div className="col-3">
-                <Sidebar />
+                <Sidebar user={user} />
             </div>
             <div className="col-6">
                 {user ? <User user={user} /> : <Visitor />}

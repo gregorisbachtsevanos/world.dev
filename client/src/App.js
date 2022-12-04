@@ -23,9 +23,9 @@ import { useAuthContext } from './hooks/useAuthContext';
 function App() {
   const { user } = useAuthContext()
   console.log(user)
-  let theme = user && `${user.extra_info.theme}-theme`
+
   return (
-    <div className={`App ${theme}`}>
+    <div className={`App ${user && user.extra_info.theme}`}>
       <BrowserRouter>
         <div>
           <Navbar user={user} />
