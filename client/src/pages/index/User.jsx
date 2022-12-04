@@ -1,8 +1,9 @@
 import ArticleList from "../../components/articleList/ArticleList";
 
-const User = () => {
+const User = ({ user }) => {
     return (
         <div>
+            {/* <p>{user.username}</p> */}
             <ArticleList />
         </div>
     );

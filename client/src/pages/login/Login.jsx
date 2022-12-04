@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const { dispatch } = useAuthContext();
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -21,6 +23,8 @@ const Login = () => {
         }
 
         const user = await res.json();
+        localStorage.setItem("user", JSON.stringify(user));
+        dispatch({ type: "LOGIN", payload: user });
         console.log(user);
         // navigate("/");
     };

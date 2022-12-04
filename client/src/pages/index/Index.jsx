@@ -9,7 +9,9 @@ const Index = ({ user }) => {
             <div className="col-3">
                 <Sidebar />
             </div>
-            <div className="col-6">{user ? <User /> : <Visitor />}</div>
+            <div className="col-6">
+                {user ? <User user={user} /> : <Visitor />}
+            </div>
             <div className="col-3">
                 <Trending />
             </div>

@@ -18,9 +18,10 @@ import { PrivateRouter } from './utils/PrivateRouter';
 import CreateArticle from './pages/createArticle/CreateArticle';
 import Profile from './pages/profile/Profile';
 import Settings from './pages/settings/Settings';
+import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
-  const user = false;
+  const { user } = useAuthContext()
 
   return (
     <div className="App">
@@ -35,9 +36,9 @@ function App() {
             </Route>
             {/* Private Routers */}
             <Route element={<PrivateRouter user={user} />}>
-              <Route path='/new-article' element={<CreateArticle />} />
-              <Route path='/settings' element={<Settings />} />
-              <Route path='/:username' element={<Profile />} />
+              <Route path='/new-article' element={<CreateArticle user={user} />} />
+              <Route path='/settings' element={<Settings user={user} />} />
+              <Route path='/:username' element={<Profile user={user} />} />
             </Route>
             {/* General Routers */}
             <Route index element={<Index user={user} />} />
