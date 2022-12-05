@@ -4,7 +4,7 @@ import { Card, Button } from "react-bootstrap";
 const News = () => {
     return (
         <>
-            <Card className="my-2 text-start">
+            <Card className="my-2 py-3 text-start">
                 <Card.Title className="w-75 m-auto">
                     <Card.Text>MongoDB Atlas Hackathon 2022 (15)</Card.Text>
                 </Card.Title>
@@ -15,12 +15,22 @@ const News = () => {
                     </Card.Text>
                     <div>
                         <Button className="w-100" variant="primary">
-                            <Link to={"#"}>Share</Link>
+                            <Link
+                                className="text-dark text-decoration-none"
+                                to={"#"}
+                            >
+                                Share
+                            </Link>
                         </Button>
                     </div>
                     <div>
                         <Button className="w-100" variant="light">
-                            <Link to={"#"}>See</Link>
+                            <Link
+                                className="text-dark text-decoration-none"
+                                to={"#"}
+                            >
+                                See
+                            </Link>
                         </Button>
                     </div>
                 </Card.Body>

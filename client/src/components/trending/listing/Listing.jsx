@@ -27,16 +27,16 @@ const listings = [
 const Listing = () => {
     return (
         <>
-            <Card className="my-2 text-start">
+            <Card className="my-2 px-5 py-3 text-start">
                 <h4>Listings</h4>
                 {listings.map((el, index) => (
                     <CardGroup key={index}>
-                        <Card.Title className="w-75 m-auto">
+                        <Card.Title className="w-100 m-auto">
                             <Link to={`listing/${el.hastag}/${el.title}`}>
                                 {el.title}
                             </Link>
                         </Card.Title>
-                        <Card.Body className="w-75 m-auto">
+                        <Card.Body className="w-100 m-auto">
                             <Card.Text>{el.hastag}</Card.Text>
                         </Card.Body>
                     </CardGroup>
