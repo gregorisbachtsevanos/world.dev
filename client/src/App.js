@@ -20,13 +20,14 @@ import Contact from './pages/contact/Contact';
 import FAQ from './pages/faq/FAQ';
 import Guides from './pages/guides/Guides';
 import Privacy from './pages/privacy/Privacy';
+import { useEffect, useState } from 'react';
 
 function App() {
   const { user, theme } = useAuthContext()
-  console.log(user)
+  let userTheme = localStorage.getItem("theme") === "true" ? "dark" : "light"
 
   return (
-    <div className={`App px-5 ${user && theme}`}>
+    <div className={`App px-5 ${userTheme}`}>
       <BrowserRouter>
         <div>
           <Navbar user={user} />

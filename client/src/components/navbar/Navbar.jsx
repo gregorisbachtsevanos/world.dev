@@ -18,7 +18,6 @@ const Navbar = ({ user }) => {
             "theme",
             localStorage.getItem("theme") === "true" ? "false" : "true"
         );
-        console.log(theme);
         dispatch({ type: "THEME", payload: theme });
 
         const res = await fetch("http://localhost:3001/change-theme", {

@@ -6,6 +6,10 @@
   background-color: #232323;
 }
 
+.card .dark{
+  background-color: #6b6b6b;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

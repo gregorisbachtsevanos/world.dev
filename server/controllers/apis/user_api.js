@@ -7,3 +7,10 @@ export const changeTheme = async (req, res) => {
     user.extra_info.theme = req.body.theme
     await user.save()
 };
+
+export const getUser = async (req, res) => {
+    // return console.log(req.query)
+    const user = await User.findById(req.query.userId)
+    // return console.log(user)
+    res.status(200).json(user)
+};

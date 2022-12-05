@@ -7,7 +7,7 @@ import schemaValidation from "../middleware/schemaValidation.js";
 
 import { registerLogic, loginLogic, indexPage, tagsPage, aboutPage, contactPage, getUserProfile, getUserSettings, newArticle } from "../controllers/user_controller.js";
 
-import { changeTheme } from "../controllers/apis/user_api.js";
+import { changeTheme, getUser } from "../controllers/apis/user_api.js";
 
 var router = Router();
 
@@ -33,6 +33,8 @@ router.post(
 );
 
 router.get("/", indexPage);
+
+router.get("/user", getUser);
 
 router.get("/tags", tagsPage);
 
