@@ -66,7 +66,8 @@ export const loginLogic = async (req, res) => {
 
 // Index page data
 export const indexPage = async (req, res) => {
-    res.send({ page: 'Tags' })
+    const articles = await Article.find().populate('author').sort({ 'updatedAt': -1 })
+    res.status(200).send(articles)
 };
 
 // Tags page data
@@ -95,8 +96,9 @@ export const getUserSettings = async (req, res) => {
 };
 // write article
 export const newArticle = async (req, res) => {
-    // return console.log(req.body)
+    // return console.log()
     const article = await Article(req.body)
+    article.author = req.query.userId
     await article.save()
     res.send(req.body)
 };

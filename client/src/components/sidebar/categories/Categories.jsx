@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const categories = [
     { icon: "", name: "Home", value: "/" },
@@ -15,9 +16,9 @@ const Categories = () => {
     return (
         <>
             {categories.map((category) => (
-                <Link key={category.name} to={category.value}>
-                    {category.name}
-                </Link>
+                <Button key={category.name} variant="link">
+                    <Link to={category.value}>{category.name}</Link>
+                </Button>
             ))}
         </>
     );

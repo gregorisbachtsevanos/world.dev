@@ -26,7 +26,7 @@ function App() {
   console.log(user)
 
   return (
-    <div className={`App ${user && user.extra_info.theme}`}>
+    <div className={`App px-5 ${user && user.extra_info.theme}`}>
       <BrowserRouter>
         <div>
           <Navbar user={user} />

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Form, Button, FloatingLabel, Container } from "react-bootstrap";
 
-const CreateArticle = () => {
+const CreateArticle = ({ user }) => {
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const [error, setError] = useState(null);
@@ -9,11 +9,14 @@ const CreateArticle = () => {
     const handleSubmit = async (e) => {
         setError(null);
         e.preventDefault();
-        const res = await fetch("http://localhost:3001/new-article", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ title, body }),
-        });
+        const res = await fetch(
+            `http://localhost:3001/new-article?userId=${user._id}`,
+            {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ title, body }),
+            }
+        );
 
         if (res.status !== 200) {
             setError("Something went wrong");
