@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 
 // const articles = [
@@ -49,11 +50,22 @@ const Article = () => {
                     )} */}
                     <Card.Title className="w-100 m-auto">
                         <Card.Text>
-                            {article.author.firstname} {article.author.lastname}
+                            <Link
+                                className="text-decoration-none text-dark"
+                                to={article.author.username}
+                            >
+                                {article.author.firstname}
+                                {article.author.lastname}
+                            </Link>
                         </Card.Text>
                     </Card.Title>
                     <Card.Body className="w-100 m-auto">
-                        <Card.Text>{article.title}</Card.Text>
+                        <Link
+                            className="text-decoration-none text-dark"
+                            to={article.title}
+                        >
+                            <Card.Text>{article.title}</Card.Text>
+                        </Link>
                     </Card.Body>
                 </Card>
             ))}

@@ -23,7 +23,9 @@ const Login = () => {
         }
 
         const user = await res.json();
+        const theme = user.extra_info.theme === "dark" ? true : false;
         localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("theme", JSON.stringify(theme));
         dispatch({ type: "LOGIN", payload: user });
         navigate("/");
     };

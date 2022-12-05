@@ -13,10 +13,18 @@ const Navbar = ({ user }) => {
     };
 
     const changeTheme = async () => {
+        let theme = localStorage.getItem("theme") === "true" ? "light" : "dark";
+        localStorage.setItem(
+            "theme",
+            localStorage.getItem("theme") === "true" ? "false" : "true"
+        );
+        console.log(theme);
+        dispatch({ type: "THEME", payload: theme });
+
         const res = await fetch("http://localhost:3001/change-theme", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(user),
+            body: JSON.stringify({ user, theme }),
         });
     };
 

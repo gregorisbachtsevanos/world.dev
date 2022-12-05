@@ -22,11 +22,11 @@ import Guides from './pages/guides/Guides';
 import Privacy from './pages/privacy/Privacy';
 
 function App() {
-  const { user } = useAuthContext()
+  const { user, theme } = useAuthContext()
   console.log(user)
 
   return (
-    <div className={`App px-5 ${user && user.extra_info.theme}`}>
+    <div className={`App px-5 ${user && theme}`}>
       <BrowserRouter>
         <div>
           <Navbar user={user} />
