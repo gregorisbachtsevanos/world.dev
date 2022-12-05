@@ -16,7 +16,10 @@ const Categories = () => {
     return (
         <>
             {categories.map((category) => (
-                <Button key={category.name} variant="link text-start">
+                <Button
+                    key={category.name}
+                    variant="link text-start text-decoration-none"
+                >
                     <Link className="text-decoration-none" to={category.value}>
                         {category.name}
                     </Link>

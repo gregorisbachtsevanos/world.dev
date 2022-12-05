@@ -26,7 +26,11 @@ const Navbar = ({ user }) => {
                 <Link to="/">logo</Link>
             </Nav.Item>
             <div className="col-10 d-flex justify-content-end align-items-center">
-                <Button variant="outline-primary" onClick={changeTheme}>
+                <Button
+                    variant="link"
+                    className="text-decoration-none"
+                    onClick={changeTheme}
+                >
                     theme
                 </Button>
                 {!user ? (
@@ -40,10 +44,14 @@ const Navbar = ({ user }) => {
                     </>
                 ) : (
                     <>
-                        <Button variant="outline-primary">
+                        <Button variant="link" className="text-decoration-none">
                             <Link to={`/${user.username}`}>Profile</Link>
                         </Button>
-                        <Button variant="outline-primary" onClick={logout}>
+                        <Button
+                            variant="link"
+                            className="text-decoration-none"
+                            onClick={logout}
+                        >
                             Logout
                         </Button>
                     </>
