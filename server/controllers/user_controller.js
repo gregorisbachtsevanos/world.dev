@@ -94,6 +94,7 @@ export const getUserProfile = async (req, res) => {
 export const getUserSettings = async (req, res) => {
     res.send({ page: "Settings" })
 };
+
 // write article
 export const newArticle = async (req, res) => {
     // return console.log()
