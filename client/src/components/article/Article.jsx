@@ -43,16 +43,16 @@ const Article = () => {
     return (
         <>
             {articles.map((article, index) => (
-                <Card key={index} className="my-2 text-start">
+                <Card key={index} className="my-3 p-5 text-start">
                     {/* {index === 0 && (
                         <Card.Img variant="top" src={article.image} />
                     )} */}
-                    <Card.Title className="w-75 m-auto">
+                    <Card.Title className="w-100 m-auto">
                         <Card.Text>
                             {article.author.firstname} {article.author.lastname}
                         </Card.Text>
                     </Card.Title>
-                    <Card.Body className="w-75 m-auto">
+                    <Card.Body className="w-100 m-auto">
                         <Card.Text>{article.title}</Card.Text>
                     </Card.Body>
                 </Card>

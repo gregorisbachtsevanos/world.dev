@@ -4,8 +4,8 @@ import Footer from "../../components/footer/Footer.jsx";
 const About = () => {
     return (
         <>
-            <Container>
-                <Card className="my-2 text-start">
+            <Container className="w-75">
+                <Card className="my-2 mx-auto w-75 p-5 text-start">
                     <CardGroup>
                         <Card.Title className="w-75 m-auto">About</Card.Title>
                         <Card.Body className="w-75 m-auto">
@@ -33,8 +33,8 @@ const About = () => {
                         />
                         <Card.Body className="w-75 m-auto">
                             <Card.Text>
-                                DEV is led by Forem's co-founders Ben Halpern,
-                                Jess Lee, and Peter Frank ("PB&J").
+                                WORLDDEV is led by Forem's founder Gregori
+                                Bachtsevano.
                             </Card.Text>
                         </Card.Body>
                         <Card.Title className="w-75 m-auto">Team</Card.Title>

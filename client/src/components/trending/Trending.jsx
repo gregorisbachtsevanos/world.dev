@@ -4,7 +4,7 @@ import News from "./news/News";
 
 const Trending = () => {
     return (
-        <Nav className="flex-column">
+        <Nav className="flex-column p-5">
             <News />
             <Listing />
         </Nav>

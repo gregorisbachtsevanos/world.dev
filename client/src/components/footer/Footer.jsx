@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const footer = () => {
     return (
-        <div bgColor="light" className="text-center text-lg-start text-muted">
+        <div className="text-center text-lg-start text-muted">
             <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
                 <div className="me-5 d-none d-lg-block">
                     <span>Get connected with us on social networks:</span>
@@ -37,7 +37,7 @@ const footer = () => {
                         <Col md="3" lg="4" xl="3" className="mx-auto mb-4">
                             <h6 className="text-uppercase fw-bold mb-4">
                                 <span icon="gem" className="me-3" />
-                                Company name
+                                WorldDev
                             </h6>
                             <p>
                                 Here you can use rows and columns to organize
@@ -48,7 +48,7 @@ const footer = () => {
 
                         <Col md="2" lg="2" xl="2" className="mx-auto mb-4">
                             <h6 className="text-uppercase fw-bold mb-4">
-                                Products
+                                Categories
                             </h6>
                             <p>
                                 <a href="#!" className="text-reset">
@@ -113,7 +113,7 @@ const footer = () => {
                             </p>
                             <p>
                                 <span icon="envelope" className="me-3" />
-                                info@example.com
+                                info@worlddev.com
                             </p>
                             <p>
                                 <span icon="phone" className="me-3" /> + 01 234
@@ -133,8 +133,8 @@ const footer = () => {
                 style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
             >
                 © 2021 Copyright:
-                <a className="text-reset fw-bold" href="gregorisbachtsevanos">
-                    MDBootstrap.com
+                <a className="text-reset fw-bold" href="worlddev">
+                    worlddev
                 </a>
             </div>
         </div>

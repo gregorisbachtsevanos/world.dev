@@ -7,11 +7,12 @@ const ads = [
         title: "Calling all early-career developers & coding mentors!",
         description:
             "Join CodeNewbie Community: a supportive space for coding newbies to connect & express themselves.",
+        action: "More...",
     },
     {
         image: "https://via.placeholder.com/600x300.png",
-        title: "The Forem Shop is Here!",
-        description: "",
+        title: "The Forem Shop!",
+        action: "Coming soon",
     },
 ];
 
@@ -29,7 +30,7 @@ const Advertisement = () => {
                             <Card.Text>{ad.description}</Card.Text>
                         )}
                         <Button variant="link">
-                            <Link to={"#"}>More...</Link>
+                            <Link to={"#"}>{ad.action}</Link>
                         </Button>
                     </Card.Body>
                 </Card>
