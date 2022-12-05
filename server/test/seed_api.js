@@ -4,7 +4,7 @@ import User from '../models/user_model.js'
 import Articles from '../models/article_model.js'
 
 const getArticlesApi = async () => {
-    const res = await fetch('https://newsapi.org/v2/top-headlines?category=technology&apiKey=a15f1151bbf94f5287efe9083401a721')
+    const res = await fetch(`https://newsapi.org/v2/top-headlines?category=business&apiKey=${process.env.NEW_API_KEY}`)
     const data = await res.json()
     const user = await User.find()
     const resArticles = data.articles
