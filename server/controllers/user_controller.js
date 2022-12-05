@@ -103,3 +103,10 @@ export const newArticle = async (req, res) => {
     await article.save()
     res.send(req.body)
 };
+
+// write article
+export const getArticle = async (req, res) => {
+    // return console.log(req.params.article)
+    const article = await Article.find({ title: req.params.article }).populate('author')
+    res.send(article)
+};

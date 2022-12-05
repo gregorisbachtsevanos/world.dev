@@ -1,4 +1,4 @@
-import ArticleList from "../../components/articleList/ArticleList";
+import ArticleList from "../../components/articleContainer/ArticleContainer";
 
 const Visitor = () => {
     return (

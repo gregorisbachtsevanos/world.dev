@@ -5,7 +5,7 @@ import asyncCatch from "../utils/asyncCatch.js";
 import ThrowError from "../utils/ThrowError.js";
 import schemaValidation from "../middleware/schemaValidation.js";
 
-import { registerLogic, loginLogic, indexPage, tagsPage, aboutPage, contactPage, getUserProfile, getUserSettings, newArticle } from "../controllers/user_controller.js";
+import { registerLogic, loginLogic, indexPage, tagsPage, aboutPage, contactPage, getUserProfile, getUserSettings, newArticle, getArticle } from "../controllers/user_controller.js";
 
 import { changeTheme, getUser } from "../controllers/apis/user_api.js";
 
@@ -43,6 +43,8 @@ router.post("/change-theme", changeTheme);
 router.get("/about", aboutPage);
 
 router.get("/contact", contactPage);
+
+router.get("/article/:article", getArticle);
 
 router.get("/:username", asyncCatch(getUserProfile));
 

@@ -21,6 +21,7 @@ import FAQ from './pages/faq/FAQ';
 import Guides from './pages/guides/Guides';
 import Privacy from './pages/privacy/Privacy';
 import { useEffect, useState } from 'react';
+import { Article } from './pages/article/Article';
 
 function App() {
   const { user, theme } = useAuthContext()
@@ -51,6 +52,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/guides" element={<Guides />} />
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/article/:article" element={<Article />} />
           </Routes>
         </div>
       </BrowserRouter>

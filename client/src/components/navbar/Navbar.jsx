@@ -28,8 +28,8 @@ const Navbar = ({ user }) => {
     };
 
     return (
-        <Nav className="row p-2">
-            <Nav.Item className="col-2">
+        <Nav className="row py-4">
+            <Nav.Item className="col-2 text-start">
                 <Link to="/">logo</Link>
             </Nav.Item>
             <div className="col-10 d-flex justify-content-end align-items-center">
