@@ -54,6 +54,8 @@ const Navbar = ({ user }) => {
                         <Button variant="link" className="text-decoration-none">
                             <Link to={`/${user.username}`}>Profile</Link>
                         </Button>
+                        <Link to={`/new-article`}>New Article</Link>
+
                         <Button
                             variant="link"
                             className="text-decoration-none"

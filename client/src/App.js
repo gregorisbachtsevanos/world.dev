@@ -40,7 +40,7 @@ function App() {
             </Route>
             {/* Private Routers */}
             <Route element={<PrivateRouter user={user} />}>
-              <Route path='/:username/new-article' element={<CreateArticle user={user} />} />
+              <Route path='/new-article' element={<CreateArticle user={user} />} />
               <Route path='/:username/settings' element={<Settings user={user} />} />
               <Route path='/:username' element={<Profile user={user} />} />
             </Route>

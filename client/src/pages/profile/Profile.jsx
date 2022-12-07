@@ -3,12 +3,8 @@ import { Link, useParams } from "react-router-dom";
 
 const Profile = ({ user }) => {
     const { username } = useParams();
-    return (
-        <div>
-            {username}
-            <Link to={`new-article`}>New Article</Link>
-        </div>
-    );
+    console.log(user);
+    return <div>{username}</div>;
 };
 
 export default Profile;
