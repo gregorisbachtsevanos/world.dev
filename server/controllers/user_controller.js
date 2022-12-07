@@ -87,7 +87,8 @@ export const contactPage = async (req, res) => {
 
 // Get user's profile data
 export const getUserProfile = async (req, res) => {
-    res.send({ page: "Profile" })
+    const { username } = req.params
+    console.log(username)
 };
 
 // Get user's settings data

@@ -30,7 +30,7 @@ export const Article = () => {
                                 className="text-decoration-none text-dark"
                                 to={articleInfo.author.username}
                             >
-                                {articleInfo.author.firstname}
+                                {articleInfo.author.firstname}{" "}
                                 {articleInfo.author.lastname}
                             </Link>
                         </Card.Text>

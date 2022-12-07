@@ -2,34 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 
-// const articles = [
-//     {
-//         image: "https://via.placeholder.com/600x200.png",
-//         author: "Jean-Remy Duboc",
-//         title: "Article",
-//     },
-//     {
-//         image: "https://via.placeholder.com/600x200.png",
-//         author: "Jean-Remy Duboc",
-//         title: "Article",
-//     },
-//     {
-//         image: "https://via.placeholder.com/600x200.png",
-//         author: "Jean-Remy Duboc",
-//         title: "Article",
-//     },
-//     {
-//         image: "https://via.placeholder.com/600x200.png",
-//         author: "Jean-Remy Duboc",
-//         title: "Article",
-//     },
-//     {
-//         image: "https://via.placeholder.com/600x200.png",
-//         author: "Jean-Remy Duboc",
-//         title: "Article",
-//     },
-// ];
-
 const Article = () => {
     const [articles, setArticles] = useState([]);
 
@@ -54,7 +26,7 @@ const Article = () => {
                                 className="text-decoration-none text-dark"
                                 to={article.author.username}
                             >
-                                {article.author.firstname}
+                                {article.author.firstname}{" "}
                                 {article.author.lastname}
                             </Link>
                         </Card.Text>
